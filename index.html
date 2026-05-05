@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GameStop × eBay — The $55.5B Hostile Offer</title>
+<title>GameStop × eBay The $55.5B Hostile Offer</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -257,7 +257,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
 .fu.d3{transition-delay:.32s}
 
 /* ═══════════════════════════════════════
-   RESPONSIVE — tablet
+   RESPONSIVE tablet
 ═══════════════════════════════════════ */
 @media(max-width:900px){
   nav{padding:0 24px}
@@ -276,7 +276,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
 }
 
 /* ═══════════════════════════════════════
-   RESPONSIVE — mobile
+   RESPONSIVE mobile
 ═══════════════════════════════════════ */
 @media(max-width:700px){
   /* Nav */
@@ -372,17 +372,17 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
 <nav>
   <div class="nav-brand">GME <em>/</em> EBAY</div>
   <ul class="nav-links">
+    <li><a href="#interview">Interview</a></li>
     <li><a href="#anatomy">Proposal</a></li>
     <li><a href="#thesis">Thesis</a></li>
     <li><a href="#context">eBay</a></li>
     <li><a href="#timeline">Timeline</a></li>
     <li><a href="#reaction">Markets</a></li>
-    <li><a href="#interview">Interview</a></li>
     <li><a href="#risks">Risks</a></li>
     <li><a href="#sources">Sources</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:12px">
-    <!-- Remote control hamburger — visible on mobile only -->
+    <!-- Remote control hamburger visible on mobile only -->
     <button class="hamburger" id="hamburger" aria-label="Open navigation">
       <svg width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Remote body -->
@@ -401,14 +401,14 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#anatomy" class="mm-link">01 — Proposal</a>
-  <a href="#thesis" class="mm-link">02 — Thesis</a>
-  <a href="#context" class="mm-link">03 — eBay</a>
-  <a href="#timeline" class="mm-link">04 — Timeline</a>
-  <a href="#reaction" class="mm-link">05 — Markets</a>
-  <a href="#interview" class="mm-link">06 — Interview</a>
-  <a href="#risks" class="mm-link">07 — Risks</a>
-  <a href="#sources" class="mm-link">08 — Sources</a>
+  <a href="#interview" class="mm-link">01 Interview</a>
+  <a href="#anatomy" class="mm-link">02 Proposal</a>
+  <a href="#thesis" class="mm-link">03 Thesis</a>
+  <a href="#context" class="mm-link">04 eBay</a>
+  <a href="#timeline" class="mm-link">05 Timeline</a>
+  <a href="#reaction" class="mm-link">06 Markets</a>
+  <a href="#risks" class="mm-link">07 Risks</a>
+  <a href="#sources" class="mm-link">08 Sources</a>
 </div>
 
 <!-- HERO -->
@@ -427,7 +427,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
       </div>
       <div class="live-quote">
         <div class="lq-header"><div class="live-dot"></div><span class="live-label">Live Quote</span></div>
-        <div class="lq-price loading" id="gme-price">—</div>
+        <div class="lq-price loading" id="gme-price"> </div>
         <div class="lq-change" id="gme-change">Fetching...</div>
         <div class="lq-sub" id="gme-sub"></div>
         <span class="lq-ts" id="gme-ts"></span>
@@ -449,13 +449,13 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
       </div>
       <div class="live-quote">
         <div class="lq-header"><div class="live-dot"></div><span class="live-label">Live Quote</span></div>
-        <div class="lq-price loading" id="ebay-price">—</div>
+        <div class="lq-price loading" id="ebay-price"> </div>
         <div class="lq-change" id="ebay-change">Fetching...</div>
         <div class="lq-sub" id="ebay-sub"></div>
-        <!-- Spread to $125 offer — computed live -->
+        <!-- Spread to $125 offer computed live -->
         <div class="lq-spread" id="ebay-spread-block" style="display:none">
           <span class="lq-spread-label">Spread to $125.00 Offer</span>
-          <div class="lq-spread-val" id="ebay-spread-val">—</div>
+          <div class="lq-spread-val" id="ebay-spread-val"> </div>
           <span class="lq-spread-sub" id="ebay-spread-sub"></span>
         </div>
         <span class="lq-ts" id="ebay-ts"></span>
@@ -468,7 +468,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
   <div class="hero-foot">
     <div class="hero-hl fu">GameStop<br><em>Goes Hostile.</em></div>
     <div class="hero-rule fu d1"></div>
-    <p class="hero-lede fu d2">Ryan Cohen's $55.5 billion unsolicited proposal to acquire eBay is among the boldest M&amp;A bids in recent memory — a company worth $11.9 billion pursuing a target nearly four times its size. If completed, Cohen envisions a combined marketplace capable of becoming a genuine rival to Amazon.</p>
+    <p class="hero-lede fu d2">Ryan Cohen's $55.5 billion unsolicited proposal to acquire eBay is among the boldest M&amp;A bids in recent memory a company worth $11.9 billion pursuing a target nearly four times its size. If completed, Cohen envisions a combined marketplace capable of becoming a genuine rival to Amazon.</p>
   </div>
 
   <div class="scroll-cue">
@@ -481,9 +481,40 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
   </div>
 </div>
 
-<!-- 01 PROPOSAL ANATOMY -->
+<!-- 01 THE INTERVIEW -->
+<section id="interview" style="background:var(--bg);padding-top:0;padding-bottom:96px">
+  <div class="eyebrow fu">01 · On The Record</div>
+  <h2 class="h2 fu d1">The Interview<br><em>Worth Watching.</em></h2>
+  <p class="sub fu d2" style="margin-bottom:36px">Ryan Cohen joined CNBC Squawk Box on May 4, 2026 the morning after the offer broke for a 16-minute exchange with Andrew Ross Sorkin and Becky Quick that became the story of the day. Cohen repeatedly deflected financing questions, directing viewers to the company's website. Co-anchor Quick eventually stepped in: "That's a pretty straightforward question. I don't get it. Where's the rest of the money coming from?"</p>
+
+  <!-- RESPONSIVE 16:9 EMBED -->
+  <div class="fu d3" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:var(--bg1);border:1px solid var(--bdr)">
+    <iframe
+      src="https://www.youtube.com/embed/Bmj2PaxX24E"
+      title="Ryan Cohen CNBC Squawk Box Full Interview GameStop eBay Offer May 4, 2026"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%">
+    </iframe>
+  </div>
+
+  <!-- CLIP META -->
+  <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bdr)" class="fu d3 interview-meta">
+    <div style="background:var(--bg1);padding:20px 24px">
+      <span class="label-sm" style="display:block;margin-bottom:8px">Full Interview</span>
+      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l40);line-height:1.5">CNBC Squawk Box · Andrew Ross Sorkin, Becky Quick, Melissa Lee · May 4, 2026 · approx. 16 minutes</p>
+    </div>
+    <div style="background:var(--bg1);padding:20px 24px">
+      <span class="label-sm" style="display:block;margin-bottom:8px;color:var(--red)">Key Exchange</span>
+      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l40);line-height:1.5">"It's on our website. It's half cash, half stock." Cohen repeated the phrase across multiple direct financing questions before the interview ended without a clear funding explanation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 PROPOSAL ANATOMY -->
 <section id="anatomy">
-  <div class="eyebrow fu">01 — Proposal Anatomy</div>
+  <div class="eyebrow fu">02 · Proposal Anatomy</div>
   <h2 class="h2 fu d1">The Offer,<br><em>Dissected.</em></h2>
   <p class="sub fu d2">A non-binding, unsolicited proposal submitted to eBay's board on May 3, 2026. eBay confirmed receipt on May 4 and stated that no prior discussions or outreach from GameStop had occurred.</p>
   <div class="bento fu d3">
@@ -501,7 +532,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
     <div class="bc">
       <span class="tag">Aggregate Equity Value</span>
       <div class="bc-num">$55.5<span class="bc-unit">B</span></div>
-      <p class="bc-body">Based on eBay's most recently disclosed undiluted share count. GameStop's own market capitalization at announcement was approximately $11.9 billion — roughly one-fifth the offer size.</p>
+      <p class="bc-body">Based on eBay's most recently disclosed undiluted share count. GameStop's own market capitalization at announcement was approximately $11.9 billion roughly one-fifth the offer size.</p>
     </div>
     <div class="bc bc-wide">
       <span class="tag">Consideration Structure</span>
@@ -520,7 +551,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
     <div class="bc">
       <span class="tag">Pre-Bid Economic Stake in eBay</span>
       <div class="bc-num">5<span class="bc-unit">%</span></div>
-      <p class="bc-body">Accumulated through direct share purchases and derivatives beginning February 4, 2026 — the date eBay designates as the "unaffected" baseline price for premium calculations.</p>
+      <p class="bc-body">Accumulated through direct share purchases and derivatives beginning February 4, 2026 the date eBay designates as the "unaffected" baseline price for premium calculations.</p>
     </div>
     <div class="bc bc-full">
       <span class="tag" style="margin-bottom:22px">Financing Stack</span>
@@ -532,13 +563,13 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
         </div>
         <div class="fin-row">
           <div class="fin-debt" style="flex:20;display:flex;align-items:center;height:100%">
-            <span class="fin-label">TD Securities — Debt Financing</span><span class="fin-amount" style="color:var(--l70)">$20.0B (Highly Confident Letter)</span>
+            <span class="fin-label">TD Securities Debt Financing</span><span class="fin-amount" style="color:var(--l70)">$20.0B (Highly Confident Letter)</span>
           </div>
         </div>
         <div class="fin-row">
           <div class="fin-gap" style="flex:26;display:flex;align-items:center;height:100%">
             <span class="fin-label">Equity Issuance / Additional Capital</span>
-            <span class="fin-amount" style="color:var(--l40);font-weight:300;font-size:10px;letter-spacing:.06em">Remaining gap — not yet committed</span>
+            <span class="fin-amount" style="color:var(--l40);font-weight:300;font-size:10px;letter-spacing:.06em">Remaining gap not yet committed</span>
           </div>
         </div>
       </div>
@@ -549,39 +580,39 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
 
 <!-- 02 STRATEGIC THESIS -->
 <section id="thesis">
-  <div class="eyebrow fu">02 — Strategic Thesis</div>
+  <div class="eyebrow fu">03 · Strategic Thesis</div>
   <h2 class="h2 fu d1">Cohen's<br><em>Ambition.</em></h2>
   <blockquote class="quote-block fu d2">
     <p class="quote-text">"eBay could be a legit competitor to Amazon."</p>
-    <cite class="quote-attr">Ryan Cohen, CEO — GameStop Corp. · The Wall Street Journal, May 3, 2026</cite>
+    <cite class="quote-attr">Ryan Cohen, CEO · GameStop Corp. · The Wall Street Journal, May 3, 2026</cite>
   </blockquote>
   <div class="thesis-grid fu d3">
     <div class="tc">
       <div class="tc-num">01</div>
       <h3 class="tc-head">Physical Meets Digital</h3>
-      <p class="tc-body">In his letter to eBay Chairman Paul Kessler, Cohen described <strong>GameStop's approximately 1,600 U.S. retail locations</strong> as a national infrastructure layer for authentication, inventory intake, fulfillment, and live commerce. Paired with eBay's global online marketplace, the combination could give the entity both digital reach and physical presence — an asset mix Amazon has spent years attempting to replicate.</p>
+      <p class="tc-body">In his letter to eBay Chairman Paul Kessler, Cohen described <strong>GameStop's approximately 1,600 U.S. retail locations</strong> as a national infrastructure layer for authentication, inventory intake, fulfillment, and live commerce. Paired with eBay's global online marketplace, the combination could give the entity both digital reach and physical presence an asset mix Amazon has spent years attempting to replicate.</p>
     </div>
     <div class="tc">
       <div class="tc-num">02</div>
       <h3 class="tc-head">Category Alignment</h3>
-      <p class="tc-body">The two businesses share significant overlap in <strong>video games, collectibles, and trading cards</strong> — categories eBay CEO Jamie Iannone has already elevated as strategic "focus categories." Cohen also identified <strong>live commerce</strong> as an underdeveloped opportunity for eBay's platform, a channel where GameStop's physical footprint and brand recognition among collectors could drive meaningful differentiation.</p>
+      <p class="tc-body">The two businesses share significant overlap in <strong>video games, collectibles, and trading cards</strong> categories eBay CEO Jamie Iannone has already elevated as strategic "focus categories." Cohen also identified <strong>live commerce</strong> as an underdeveloped opportunity for eBay's platform, a channel where GameStop's physical footprint and brand recognition among collectors could drive meaningful differentiation.</p>
     </div>
     <div class="tc">
       <div class="tc-num">03</div>
       <h3 class="tc-head">Operational Track Record</h3>
-      <p class="tc-body">Since assuming control of GameStop in early 2021, Cohen oversaw a swing from a <strong>$381 million net loss in FY2021</strong> to <strong>$418 million in net income in FY2025</strong>, while reducing SG&amp;A costs by approximately <strong>$800 million</strong>. Cohen would serve as CEO of the combined company, compensated solely on the performance of the merged entity — no salary, no cash bonus, no golden parachute.</p>
+      <p class="tc-body">Since assuming control of GameStop in early 2021, Cohen oversaw a swing from a <strong>$381 million net loss in FY2021</strong> to <strong>$418 million in net income in FY2025</strong>, while reducing SG&amp;A costs by approximately <strong>$800 million</strong>. Cohen would serve as CEO of the combined company, compensated solely on the performance of the merged entity no salary, no cash bonus, no golden parachute.</p>
     </div>
   </div>
 </section>
 
 <!-- 03 EBAY AT THE CROSSROADS -->
 <section id="context">
-  <div class="eyebrow fu">03 — eBay at the Crossroads</div>
+  <div class="eyebrow fu">04 · eBay at the Crossroads</div>
   <h2 class="h2 fu d1">The Target's<br><em>Trajectory.</em></h2>
   <p class="sub fu d2">eBay's gross merchandise volume peaked in 2020 during the pandemic-era e-commerce surge. The platform has since faced mounting competition and has not recovered its 2020 peak volume.</p>
   <div class="cx-grid fu d3">
     <div class="cx-card">
-      <span class="label-sm" style="display:block;margin-bottom:24px">Gross Merchandise Volume — 2020 Peak vs. 2025</span>
+      <span class="label-sm" style="display:block;margin-bottom:24px">Gross Merchandise Volume 2020 Peak vs. 2025</span>
       <div class="gmv-compare">
         <div class="gmv-col">
           <span class="gmv-yr">2020 Peak</span>
@@ -594,10 +625,10 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
           <span class="gmv-arrow">↓ −20.4% from peak</span>
         </div>
       </div>
-      <p class="gmv-desc">After reaching $100 billion in GMV in 2020, eBay's volume declined as pandemic-era shopping habits normalized and competition from newer marketplace entrants intensified. CEO Jamie Iannone's "focus categories" strategy — targeting trading cards, collectibles, used luxury goods, and auto parts — is designed to drive higher buyer engagement and transaction frequency.</p>
+      <p class="gmv-desc">After reaching $100 billion in GMV in 2020, eBay's volume declined as pandemic-era shopping habits normalized and competition from newer marketplace entrants intensified. CEO Jamie Iannone's "focus categories" strategy targeting trading cards, collectibles, used luxury goods, and auto parts is designed to drive higher buyer engagement and transaction frequency.</p>
     </div>
     <div class="cx-card">
-      <span class="label-sm" style="display:block;margin-bottom:20px">Competitive Landscape — Key Pressure Points</span>
+      <span class="label-sm" style="display:block;margin-bottom:20px">Competitive Landscape Key Pressure Points</span>
       <div>
         <div class="comp-row"><span class="comp-name">Amazon</span><span class="comp-type">Inventory + Third-Party Marketplace</span></div>
         <div class="comp-row"><span class="comp-name">Walmart Marketplace</span><span class="comp-type">Omnichannel Retail</span></div>
@@ -606,7 +637,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
         <div class="comp-row"><span class="comp-name">Etsy / Depop</span><span class="comp-type">C2C and Secondhand Apparel</span></div>
       </div>
       <div class="depop-note">
-        <span class="dn-head">Pending Transaction — eBay / Depop</span>
+        <span class="dn-head">Pending Transaction eBay / Depop</span>
         <p>In February 2026, eBay agreed to acquire Depop from Etsy for approximately $1.2 billion in cash. The deal has received regulatory clearance in the U.S. and Germany. Reviews remain in progress in the UK and Australia. Expected to close by Q3 2026, subject to remaining approvals.</p>
       </div>
     </div>
@@ -616,7 +647,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
 <!-- 04 TIMELINE -->
 <section id="timeline">
   <div class="tl-header">
-    <div class="eyebrow fu">04 — Sequence of Events</div>
+    <div class="eyebrow fu">05 · Sequence of Events</div>
     <h2 class="h2 fu d1">From Accumulation<br><em>to Hostile Bid.</em></h2>
     <p class="sub fu d2" style="margin-bottom:0">Drag or scroll to trace the deal's path from Cohen's compensation announcement through eBay's first public response.</p>
   </div>
@@ -625,12 +656,12 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
       <div class="tl-event key">
         <div class="tl-dt">January 2026</div>
         <div class="tl-title">Cohen Compensation Structure Announced</div>
-        <p class="tl-body">GameStop's board grants Cohen 171.5 million performance-based stock options at a $20.66 exercise price — no salary, no cash bonus, no time-based vesting. The options could be worth more than $35 billion only if all nine tranches fully vest, which requires hitting both a $100 billion market cap and $10 billion in cumulative EBITDA. If the minimum hurdles are not met, Cohen receives nothing. Source: GameStop 8-K, SEC EDGAR, January 7, 2026.</p>
+        <p class="tl-body">GameStop's board grants Cohen 171.5 million performance-based stock options at a $20.66 exercise price no salary, no cash bonus, no time-based vesting. The options could be worth more than $35 billion only if all nine tranches fully vest, which requires hitting both a $100 billion market cap and $10 billion in cumulative EBITDA. If the minimum hurdles are not met, Cohen receives nothing. Source: GameStop 8-K, SEC EDGAR, January 7, 2026.</p>
       </div>
       <div class="tl-event key">
         <div class="tl-dt">February 4, 2026</div>
         <div class="tl-title">GME Begins Accumulating EBAY</div>
-        <p class="tl-body">GameStop quietly begins building an economic position in eBay through direct share purchases and derivatives. eBay's closing price on this date becomes the "unaffected" baseline — the price GameStop uses to establish the 46% premium at announcement.</p>
+        <p class="tl-body">GameStop quietly begins building an economic position in eBay through direct share purchases and derivatives. eBay's closing price on this date becomes the "unaffected" baseline the price GameStop uses to establish the 46% premium at announcement.</p>
       </div>
       <div class="tl-event">
         <div class="tl-dt">February 2026</div>
@@ -638,19 +669,19 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
         <p class="tl-body">Separately, eBay agrees to acquire Depop from Etsy for approximately $1.2 billion in cash, targeting younger C2C fashion consumers. U.S. and German regulatory clearances obtained; UK and Australian reviews remain pending.</p>
       </div>
       <div class="tl-event key">
-        <div class="tl-dt">May 3, 2026 — Sunday</div>
+        <div class="tl-dt">May 3, 2026 · Sunday</div>
         <div class="tl-title">Hostile Proposal Submitted to eBay Board</div>
         <p class="tl-body">Cohen submits a non-binding letter to eBay Chairman Paul Kessler offering $125.00 per share in a 50/50 cash-and-stock transaction. GameStop simultaneously discloses its 5% economic stake and provides the TD Securities "highly confident" financing letter. Cohen tells The Wall Street Journal he is prepared to pursue a proxy fight.</p>
       </div>
       <div class="tl-event key">
-        <div class="tl-dt">May 4, 2026 — Monday</div>
+        <div class="tl-dt">May 4, 2026 · Monday</div>
         <div class="tl-title">eBay Confirms. Markets React.</div>
-        <p class="tl-body">eBay confirms receipt of the proposal, noting no prior discussions had taken place and its board would conduct a review. Cohen appears on CNBC Squawk Box in a notably combative interview. GME falls approximately 10%. EBAY rises approximately 5% to around $109 — a meaningful discount to the $125 offer.</p>
+        <p class="tl-body">eBay confirms receipt of the proposal, noting no prior discussions had taken place and its board would conduct a review. Cohen appears on CNBC Squawk Box in a notably combative interview. GME falls approximately 10%. EBAY rises approximately 5% to around $109 a meaningful discount to the $125 offer.</p>
       </div>
       <div class="tl-event">
         <div class="tl-dt">Pending</div>
         <div class="tl-title">Board Response Outstanding</div>
-        <p class="tl-body">The eBay board has confirmed receipt and initiated review. The proposal remains non-binding and unsolicited. If the board declines to engage, Cohen has stated his intent to pursue a proxy fight — taking the offer directly to eBay shareholders.</p>
+        <p class="tl-body">The eBay board has confirmed receipt and initiated review. The proposal remains non-binding and unsolicited. If the board declines to engage, Cohen has stated his intent to pursue a proxy fight taking the offer directly to eBay shareholders.</p>
       </div>
     </div>
   </div>
@@ -658,76 +689,45 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
 
 <!-- 05 MARKET REACTION -->
 <section id="reaction">
-  <div class="eyebrow fu">05 — Market Reaction</div>
+  <div class="eyebrow fu">06 · Market Reaction</div>
   <h2 class="h2 fu d1">Wall Street<br><em>Weighs In.</em></h2>
-  <p class="sub fu d2" style="margin-bottom:40px">Price movements on May 4, 2026 — the first full trading session following Sunday's announcement.</p>
+  <p class="sub fu d2" style="margin-bottom:40px">Price movements on May 4, 2026 the first full trading session following Sunday's announcement.</p>
   <div class="react-grid fu d3">
     <div class="rc">
-      <span class="tag">GME — May 4, 2026</span>
+      <span class="tag">GME May 4, 2026</span>
       <div class="move move-dn">−10%</div>
       <p class="rc-body">Investors priced in dilution risk. The financing gap between confirmed sources ($9.4B cash + $20B debt = $29.4B) and the $55.5B deal size implies material equity issuance. Cohen confirmed on CNBC that GameStop would issue additional stock to fund the gap.</p>
     </div>
     <div class="rc">
-      <span class="tag">EBAY — May 4, 2026</span>
+      <span class="tag">EBAY May 4, 2026</span>
       <div class="move move-up">+5%</div>
-      <p class="rc-body">eBay shares climbed to approximately $109 on deal premium speculation — meaningful upside relative to pre-bid levels, but still trading at a substantial discount to the $125 offer. The gap implies a relatively low market-assigned probability of deal completion.</p>
+      <p class="rc-body">eBay shares climbed to approximately $109 on deal premium speculation meaningful upside relative to pre-bid levels, but still trading at a substantial discount to the $125 offer. The gap implies a relatively low market-assigned probability of deal completion.</p>
     </div>
     <div class="rc">
-      <span class="tag">EBAY — Spread to Offer Price</span>
+      <span class="tag">EBAY Spread to Offer Price</span>
       <div class="move move-gap">~$16</div>
       <p class="rc-body">The spread between eBay's trading price (~$109) and the $125 offer is a market-implied signal. At approximately 13% below the offer price, the market is communicating material skepticism about both financing and board receptivity.</p>
     </div>
   </div>
   <div class="analyst-block fu" style="margin-top:2px">
     <p>"While there is overlap between GameStop's and eBay's businesses in games, toys and collectibles, the strategic rationale for such a deal remains unclear. Why disrupt things? The turnaround is working."</p>
-    <cite>Bernstein Research — Published Note to Clients, May 4, 2026</cite>
-  </div>
-</section>
-
-<!-- 06 THE INTERVIEW -->
-<section id="interview" style="background:var(--bg);padding-top:0;padding-bottom:96px">
-  <div class="eyebrow fu">06 — On The Record</div>
-  <h2 class="h2 fu d1">The Interview<br><em>Worth Watching.</em></h2>
-  <p class="sub fu d2" style="margin-bottom:36px">Ryan Cohen joined CNBC Squawk Box on May 4, 2026 — the morning after the offer broke — for a 16-minute exchange with Andrew Ross Sorkin and Becky Quick that became the story of the day. Cohen repeatedly deflected financing questions, directing viewers to the company's website. Co-anchor Quick eventually stepped in: "That's a pretty straightforward question. I don't get it. Where's the rest of the money coming from?"</p>
-
-  <!-- RESPONSIVE 16:9 EMBED -->
-  <div class="fu d3" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:var(--bg1);border:1px solid var(--bdr)">
-    <iframe
-      src="https://www.youtube.com/embed/Bmj2PaxX24E"
-      title="Ryan Cohen CNBC Squawk Box Full Interview — GameStop eBay Offer — May 4, 2026"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%">
-    </iframe>
-  </div>
-
-  <!-- SECOND CLIP -->
-  <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bdr)" class="fu d3 interview-meta">
-    <div style="background:var(--bg1);padding:20px 24px">
-      <span class="label-sm" style="display:block;margin-bottom:8px">Full Interview</span>
-      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l40);line-height:1.5">CNBC Squawk Box · Andrew Ross Sorkin, Becky Quick, Melissa Lee · May 4, 2026 · approx. 16 minutes</p>
-    </div>
-    <div style="background:var(--bg1);padding:20px 24px">
-      <span class="label-sm" style="display:block;margin-bottom:8px;color:var(--red)">Key Exchange</span>
-      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l40);line-height:1.5">"It's on our website. It's half cash, half stock." Cohen repeated the phrase across multiple direct financing questions before the interview ended without a clear funding explanation.</p>
-    </div>
+    <cite>Bernstein Research Published Note to Clients, May 4, 2026</cite>
   </div>
 </section>
 
 <!-- 07 RISK FACTORS -->
 <section id="risks">
-  <div class="eyebrow fu">06 — Risk Factors</div>
+  <div class="eyebrow fu">07 · Risk Factors</div>
   <h2 class="h2 fu d1">Material<br><em>Considerations.</em></h2>
   <p class="sub fu d2">Key factors that bear on deal feasibility and execution. This analysis is for educational purposes and does not constitute investment advice.</p>
   <div class="risks-grid fu d3">
     <div class="risk">
       <div class="risk-head">Financing Gap</div>
-      <p class="risk-body">Confirmed funding — $9.4 billion in balance-sheet cash plus the TD Securities $20 billion debt financing letter — totals approximately $29.4 billion. Completing the transaction at the proposed price requires additional equity issuance or third-party capital commitments that remain unconfirmed as of the announcement date.</p>
+      <p class="risk-body">Confirmed funding $9.4 billion in balance-sheet cash plus the TD Securities $20 billion debt financing letter totals approximately $29.4 billion. Completing the transaction at the proposed price requires additional equity issuance or third-party capital commitments that remain unconfirmed as of the announcement date.</p>
     </div>
     <div class="risk">
       <div class="risk-head">Board Rejection and Proxy Path</div>
-      <p class="risk-body">eBay's board acknowledged receipt but confirmed that no prior discussions had taken place. If the board declines to engage substantively, Cohen has stated his willingness to pursue a proxy fight — a contested, expensive, and inherently uncertain process requiring GameStop to win sufficient eBay shareholder support against an incumbent board.</p>
+      <p class="risk-body">eBay's board acknowledged receipt but confirmed that no prior discussions had taken place. If the board declines to engage substantively, Cohen has stated his willingness to pursue a proxy fight a contested, expensive, and inherently uncertain process requiring GameStop to win sufficient eBay shareholder support against an incumbent board.</p>
     </div>
     <div class="risk">
       <div class="risk-head">GME Shareholder Dilution</div>
@@ -750,7 +750,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
 
 <!-- 07 SOURCES -->
 <section id="sources">
-  <div class="eyebrow fu">07 — Primary Sources</div>
+  <div class="eyebrow fu">08 · Primary Sources</div>
   <h2 class="h2 fu d1">Verified<br><em>Disclosures.</em></h2>
   <p class="sub fu d2">All financial figures and deal terms cited on this site are sourced from verified public documents and named wire services. No figures are estimated or inferred without disclosure.</p>
   <div class="sources-grid fu d3">
@@ -760,7 +760,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
       <span class="source-type">Primary Disclosure · investor.gamestop.com</span>
     </div>
     <div class="source-card">
-      <div class="source-outlet">SEC EDGAR — eBay 8-K FY2026</div>
+      <div class="source-outlet">SEC EDGAR eBay 8-K FY2026</div>
       <p class="source-desc">eBay's regulatory filing confirming receipt of GameStop's proposal and disclosing the pending Depop acquisition from Etsy, including Q1 2026 financial data and guidance.</p>
       <span class="source-type">Regulatory Filing · sec.gov/EDGAR</span>
     </div>
@@ -770,7 +770,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
       <span class="source-type">Wire Service · bloomberg.com</span>
     </div>
     <div class="source-card">
-      <div class="source-outlet">CNBC Squawk Box — May 4, 2026</div>
+      <div class="source-outlet">CNBC Squawk Box May 4, 2026</div>
       <p class="source-desc">Live interview with Ryan Cohen on May 4, 2026. Source for Cohen's statements on stock issuance and the characterization of the interview as combative. Cohen stated: "We have the ability to issue stock in order to get the deal done."</p>
       <span class="source-type">Broadcast / Transcript · cnbc.com</span>
     </div>
@@ -810,7 +810,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
   </div>
   <p class="ft-disc">This website is an independent educational resource. All financial figures are sourced from verified public disclosures including GameStop's investor relations press release, SEC EDGAR filings, and named wire services including Bloomberg, CNBC, and The Wall Street Journal. This is not investment advice. The proposal described herein is non-binding and subject to eBay board approval, regulatory review, and shareholder consent from both companies. All deal data reflects information available as of May 4, 2026.</p>
   <div class="ft-bottom">
-    <span class="ft-copy">Educational Analysis — Not Investment Advice</span>
+    <span class="ft-copy">Educational Analysis Not Investment Advice</span>
     <span class="ft-dt">Published May 04, 2026</span>
   </div>
 </footer>
@@ -841,7 +841,7 @@ function setGME(d){
         s=document.getElementById('gme-sub'),
         t=document.getElementById('gme-ts');
   if(!d||!d.c||d.c===0){
-    p.textContent='—';c.textContent='Market may be closed';return;
+    p.textContent=' ';c.textContent='Market may be closed';return;
   }
   p.textContent=`$${d.c.toFixed(2)}`;p.classList.remove('loading');
   const up=d.d>=0,sg=up?'+':'';
@@ -860,7 +860,7 @@ function setEBAY(d){
         sv=document.getElementById('ebay-spread-val'),
         ss=document.getElementById('ebay-spread-sub');
   if(!d||!d.c||d.c===0){
-    p.textContent='—';c.textContent='Market may be closed';return;
+    p.textContent=' ';c.textContent='Market may be closed';return;
   }
   p.textContent=`$${d.c.toFixed(2)}`;p.classList.remove('loading');
   const up=d.d>=0,sg=up?'+':'';
@@ -886,7 +886,7 @@ async function load(){
       : 'Unable to load quote';
     ['gme-price','ebay-price'].forEach(id=>{
       const el=document.getElementById(id);
-      if(el){el.textContent='—';el.classList.remove('loading');}
+      if(el){el.textContent=' ';el.classList.remove('loading');}
     });
     ['gme-change','ebay-change'].forEach(id=>{
       const el=document.getElementById(id);
@@ -904,7 +904,7 @@ setInterval(load,60000);
     '$55.5B Equity Value','+46% Premium to Feb 4','+20% Premium to May 2',
     'TD Securities $20B Committed','$9.4B GME Balance Sheet Cash',
     '$2B Annual Savings Pledge','Non-Binding · Board Review Pending',
-    'Ryan Cohen — Proposed CEO','Filed May 3, 2026',
+    'Ryan Cohen Proposed CEO','Filed May 3, 2026',
     'eBay GMV $79.6B in 2025','~1,600 GameStop U.S. Stores',
     'GME −10% · EBAY +5% on May 4','5% Economic Stake Disclosed',
     'Cohen: "Legit Competitor to Amazon"','Proxy Fight Risk',
