@@ -320,6 +320,8 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
   .cx-grid{grid-template-columns:1fr}
   .gmv-val-lg{font-size:32px}
 
+  .interview-meta{grid-template-columns:1fr!important}
+
   /* Timeline */
   .tl-event{width:220px;padding:56px 24px 0 0}
   #timeline{padding:64px 0}
@@ -373,6 +375,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
     <li><a href="#context">eBay</a></li>
     <li><a href="#timeline">Timeline</a></li>
     <li><a href="#reaction">Markets</a></li>
+    <li><a href="#interview">Interview</a></li>
     <li><a href="#risks">Risks</a></li>
     <li><a href="#sources">Sources</a></li>
   </ul>
@@ -401,8 +404,9 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
   <a href="#context" class="mm-link">03 — eBay</a>
   <a href="#timeline" class="mm-link">04 — Timeline</a>
   <a href="#reaction" class="mm-link">05 — Markets</a>
-  <a href="#risks" class="mm-link">06 — Risks</a>
-  <a href="#sources" class="mm-link">07 — Sources</a>
+  <a href="#interview" class="mm-link">06 — Interview</a>
+  <a href="#risks" class="mm-link">07 — Risks</a>
+  <a href="#sources" class="mm-link">08 — Sources</a>
 </div>
 
 <!-- HERO -->
@@ -678,7 +682,38 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
   </div>
 </section>
 
-<!-- 06 RISK FACTORS -->
+<!-- 06 THE INTERVIEW -->
+<section id="interview" style="background:var(--bg);padding-top:0;padding-bottom:96px">
+  <div class="eyebrow fu">06 — On The Record</div>
+  <h2 class="h2 fu d1">The Interview<br><em>Worth Watching.</em></h2>
+  <p class="sub fu d2" style="margin-bottom:36px">Ryan Cohen joined CNBC Squawk Box on May 4, 2026 — the morning after the offer broke — for a 16-minute exchange with Andrew Ross Sorkin and Becky Quick that became the story of the day. Cohen repeatedly deflected financing questions, directing viewers to the company's website. Co-anchor Quick eventually stepped in: "That's a pretty straightforward question. I don't get it. Where's the rest of the money coming from?"</p>
+
+  <!-- RESPONSIVE 16:9 EMBED -->
+  <div class="fu d3" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:var(--bg1);border:1px solid var(--bdr)">
+    <iframe
+      src="https://www.youtube.com/embed/Bmj2PaxX24E"
+      title="Ryan Cohen CNBC Squawk Box Full Interview — GameStop eBay Offer — May 4, 2026"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%">
+    </iframe>
+  </div>
+
+  <!-- SECOND CLIP -->
+  <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bdr)" class="fu d3 interview-meta">
+    <div style="background:var(--bg1);padding:20px 24px">
+      <span class="label-sm" style="display:block;margin-bottom:8px">Full Interview</span>
+      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l40);line-height:1.5">CNBC Squawk Box · Andrew Ross Sorkin, Becky Quick, Melissa Lee · May 4, 2026 · approx. 16 minutes</p>
+    </div>
+    <div style="background:var(--bg1);padding:20px 24px">
+      <span class="label-sm" style="display:block;margin-bottom:8px;color:var(--red)">Key Exchange</span>
+      <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l40);line-height:1.5">"It's on our website. It's half cash, half stock." Cohen repeated the phrase across multiple direct financing questions before the interview ended without a clear funding explanation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 07 RISK FACTORS -->
 <section id="risks">
   <div class="eyebrow fu">06 — Risk Factors</div>
   <h2 class="h2 fu d1">Material<br><em>Considerations.</em></h2>
