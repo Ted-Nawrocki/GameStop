@@ -234,7 +234,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
 /* MOBILE MENU OVERLAY */
 .mobile-menu{
   display:none;
-  position:fixed;top:50px;left:0;right:0;
+  position:fixed;top:0;left:0;right:0;
   background:rgba(7,7,8,.97);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid var(--bdr);
@@ -308,9 +308,11 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
   .bc-num{font-size:44px}
   .prems{gap:6px}
   .prem-pct{font-size:15px}
-  .fin-row{height:auto;min-height:44px;padding:10px 0;flex-wrap:wrap}
-  .fin-label{min-width:0;font-size:8.5px}
-  .fin-amount{font-size:11px}
+  /* Financing stack */
+  .fin-row{height:auto!important}
+  .fin-row>div{flex-direction:column!important;align-items:flex-start!important;height:auto!important;padding:12px 14px!important;gap:4px}
+  .fin-label{white-space:normal!important;min-width:0!important;padding:0!important;font-size:8.5px}
+  .fin-amount{padding:0!important;font-size:11px;line-height:1.4}
 
   /* Thesis */
   .thesis-grid{grid-template-columns:1fr}
@@ -929,12 +931,23 @@ document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 /* ── REMOTE CONTROL HAMBURGER ────────────────────────── */
 const hbtn = document.getElementById('hamburger');
 const mmenu = document.getElementById('mobile-menu');
+const navEl = document.querySelector('nav');
+
+function positionMenu(){
+  mmenu.style.top = navEl.getBoundingClientRect().bottom + 'px';
+}
+
 hbtn.addEventListener('click', e => {
   e.stopPropagation();
+  positionMenu();
   const open = mmenu.classList.toggle('open');
   hbtn.classList.toggle('open', open);
   hbtn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
 });
+// Reposition on scroll so it tracks the nav
+window.addEventListener('scroll', () => {
+  if(mmenu.classList.contains('open')) positionMenu();
+}, {passive:true});
 // Close on link click
 mmenu.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
