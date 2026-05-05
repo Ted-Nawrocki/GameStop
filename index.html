@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameStop × eBay — The $55.5B Hostile Offer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:    #070708;
+  --bg1:   #0d0d0f;
+  --bg2:   #131315;
+  --bg3:   #1a1a1e;
+  --red:   #e82010;
+  --red-b: rgba(232,32,16,0.28);
+  --linen: #f5f0eb;
+  --l70:   rgba(245,240,235,0.70);
+  --l40:   rgba(245,240,235,0.40);
+  --l06:   rgba(245,240,235,0.06);
+  --bdr:   rgba(245,240,235,0.08);
+  --bdr2:  rgba(245,240,235,0.13);
+  --amber: #e8a020;
+  --green: #2a9a52;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans:  'IBM Plex Sans', system-ui, sans-serif;
+  --mono:  'IBM Plex Mono', 'Courier New', monospace;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--linen);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+
+/* TICKER */
+.ticker-wrap{background:var(--red);height:30px;overflow:hidden;white-space:nowrap;display:flex;align-items:center}
+.ticker-track{display:inline-flex;animation:roll 55s linear infinite}
+@keyframes roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ti{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.13em;color:#fff;padding:0 28px;text-transform:uppercase}
+.td{color:rgba(255,255,255,.35);font-size:12px;padding:0 4px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:800;background:rgba(7,7,8,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr);height:54px;padding:0 52px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.nav-brand em{font-style:normal;color:var(--red)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--l40);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--linen)}
+.nav-date{font-family:var(--mono);font-size:9px;letter-spacing:.12em;padding:5px 12px;border:1px solid var(--red-b);color:var(--red);text-transform:uppercase;white-space:nowrap}
+
+/* SECTION UTILITIES */
+.eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:.20em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--red)}
+.h2{font-family:var(--serif);font-size:clamp(30px,4.2vw,56px);line-height:1.06;letter-spacing:-.01em;color:var(--linen);margin-bottom:12px}
+.h2 em{font-style:italic;color:var(--red)}
+.sub{font-family:var(--sans);font-size:16px;font-weight:300;color:var(--l40);line-height:1.65;max-width:600px;margin-bottom:52px}
+.tag{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--l40);display:block;margin-bottom:18px}
+.label-sm{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--l40)}
+section{padding:96px 60px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden}
+.hero-split{display:grid;grid-template-columns:1fr 2px 1fr;min-height:72vh}
+.hero-divider{background:var(--red);position:relative;display:flex;flex-direction:column;align-items:center}
+.hero-divider-chip span{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.10em;color:#fff}
+.hero-panel{padding:72px 56px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.hero-panel::before{content:'';position:absolute;inset:0;pointer-events:none}
+.hero-panel-l::before{background:radial-gradient(ellipse at 15% 55%,rgba(232,32,16,.07) 0%,transparent 65%)}
+.hero-panel-r::before{background:radial-gradient(ellipse at 85% 45%,rgba(232,32,16,.04) 0%,transparent 65%)}
+.hero-role{font-family:var(--mono);font-size:9px;letter-spacing:.20em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.hero-role::before{content:'';width:20px;height:1px;background:var(--red)}
+.hero-ticker{font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:.10em;color:var(--l70);margin-bottom:6px}
+.hero-co{font-family:var(--serif);font-size:clamp(32px,4.6vw,60px);line-height:1.0;letter-spacing:-.01em;color:var(--linen);margin-bottom:24px}
+.hero-co em{font-style:italic;color:var(--red)}
+.hero-stats{display:flex;flex-direction:column;gap:10px}
+.hs{display:flex;align-items:baseline;gap:8px}
+.hs-val{font-family:var(--mono);font-size:19px;font-weight:600;letter-spacing:-.02em;color:var(--linen)}
+.hs-label{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--l40)}
+
+/* LIVE QUOTE WIDGET */
+.live-quote{margin-top:22px;padding-top:20px;border-top:1px solid var(--bdr2)}
+.lq-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2.2s ease-in-out infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+.live-label{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+.lq-price{font-family:var(--mono);font-size:36px;font-weight:600;letter-spacing:-.03em;color:var(--linen);line-height:1;margin-bottom:4px}
+.lq-price.loading{color:var(--l40);font-size:24px}
+.lq-change{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--l40);margin-bottom:4px}
+.lq-up{color:var(--green)}
+.lq-dn{color:var(--red)}
+.lq-sub{font-family:var(--mono);font-size:9px;letter-spacing:.10em;text-transform:uppercase;color:var(--l40)}
+.lq-spread{margin-top:14px;padding:10px 14px;background:rgba(232,32,16,.08);border:1px solid var(--red-b)}
+.lq-spread-label{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:4px}
+.lq-spread-val{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--linen);letter-spacing:-.01em}
+.lq-spread-sub{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--l40);margin-top:3px;display:block}
+.lq-ts{font-family:var(--mono);font-size:8.5px;letter-spacing:.10em;color:var(--l40);text-transform:uppercase;margin-top:10px;display:block}
+
+/* HERO FOOT */
+.hero-foot{padding:60px 60px 80px;border-top:1px solid var(--bdr)}
+.hero-hl{font-family:var(--serif);font-size:clamp(44px,7.5vw,96px);line-height:.96;letter-spacing:-.02em;color:var(--linen);margin-bottom:32px}
+.hero-hl em{font-style:italic;color:var(--red)}
+.hero-rule{width:56px;height:2px;background:var(--red);margin-bottom:24px}
+.hero-lede{font-family:var(--sans);font-size:18px;font-weight:300;line-height:1.70;color:var(--l70);max-width:720px}
+.scroll-cue{position:absolute;bottom:28px;right:52px;display:flex;align-items:center;gap:8px}
+.scroll-cue span{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--l40)}
+.scroll-ring{width:26px;height:26px;border-radius:50%;border:1px solid var(--bdr2);display:flex;align-items:center;justify-content:center;animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* BENTO */
+#anatomy{background:var(--bg1)}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bdr)}
+.bc{background:var(--bg1);padding:32px 36px;position:relative;overflow:hidden;transition:background .3s}
+.bc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:transparent;transition:background .3s}
+.bc:hover{background:var(--bg2)}
+.bc:hover::after{background:var(--red)}
+.bc-wide{grid-column:span 2}
+.bc-full{grid-column:span 3}
+.bc-num{font-family:var(--mono);font-weight:600;font-size:54px;letter-spacing:-.03em;color:var(--linen);line-height:1;margin-bottom:6px}
+.bc-num-xl{font-family:var(--mono);font-weight:600;font-size:80px;letter-spacing:-.04em;color:var(--red);line-height:1;margin-bottom:6px}
+.bc-unit{font-size:28px;font-weight:300;color:var(--l40)}
+.bc-body{font-family:var(--sans);font-size:13.5px;font-weight:300;color:var(--l40);line-height:1.55;margin-top:12px}
+.prems{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.prem{padding:9px 14px;border:1px solid var(--red-b)}
+.prem-pct{font-family:var(--mono);font-size:17px;font-weight:600;color:var(--red);letter-spacing:-.02em;display:block}
+.prem-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.10em;text-transform:uppercase;color:var(--l40);display:block;margin-top:3px}
+.split-bar{display:flex;height:7px;margin:18px 0 10px}
+.split-cash{flex:1;background:var(--red)}
+.split-stock{flex:1;background:var(--l06);border:1px solid var(--bdr2);border-left:none}
+.split-lbls{display:flex;justify-content:space-between}
+.split-lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.10em;text-transform:uppercase}
+.fin-rows{display:flex;flex-direction:column;gap:3px;margin-top:6px}
+.fin-row{display:flex;align-items:center;height:48px}
+.fin-label{font-family:var(--mono);font-size:9px;font-weight:300;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.55);padding:0 14px;white-space:nowrap;min-width:160px}
+.fin-amount{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;color:#fff;padding-right:14px}
+.fin-cash{background:var(--red)}
+.fin-debt{background:#1c0c06;border:1px solid var(--red-b)}
+.fin-debt .fin-amount{color:var(--l70)}
+.fin-gap{background:var(--bg3);border:1px dashed var(--bdr2)}
+.fin-gap .fin-amount{color:var(--l40);font-weight:300}
+
+/* THESIS */
+#thesis{background:var(--bg)}
+.quote-block{border-left:3px solid var(--red);padding:28px 40px;margin:52px 0;background:var(--bg1)}
+.quote-text{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,36px);line-height:1.32;color:var(--linen);margin-bottom:18px}
+.quote-attr{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.thesis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bdr)}
+.tc{background:var(--bg1);padding:36px}
+.tc-num{font-family:var(--serif);font-size:80px;color:var(--red);opacity:.15;line-height:1;user-select:none;margin-bottom:2px}
+.tc-head{font-family:var(--serif);font-size:22px;color:var(--linen);line-height:1.2;margin-bottom:14px}
+.tc-body{font-family:var(--sans);font-size:14px;font-weight:300;color:var(--l40);line-height:1.65}
+.tc-body strong{color:var(--linen);font-weight:500}
+
+/* CONTEXT */
+#context{background:var(--bg1)}
+.cx-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bdr)}
+.cx-card{background:var(--bg1);padding:40px}
+.gmv-compare{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:28px}
+.gmv-col{padding:24px 28px;border:1px solid var(--bdr)}
+.gmv-col+.gmv-col{border-left:none}
+.gmv-yr{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--l40);display:block;margin-bottom:8px}
+.gmv-val-lg{font-family:var(--mono);font-size:40px;font-weight:600;letter-spacing:-.03em;line-height:1}
+.gmv-peak{color:var(--linen)}
+.gmv-curr{color:var(--red)}
+.gmv-arrow{font-family:var(--mono);font-size:12px;color:var(--l40);margin-top:8px;display:block}
+.gmv-desc{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l40);line-height:1.55;padding-top:16px;border-top:1px solid var(--bdr)}
+.comp-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--bdr)}
+.comp-row:last-child{border-bottom:none}
+.comp-name{font-family:var(--sans);font-size:15px;font-weight:400;color:var(--linen)}
+.comp-type{font-family:var(--mono);font-size:9px;letter-spacing:.10em;text-transform:uppercase;color:var(--l40)}
+.depop-note{margin-top:24px;padding:20px 24px;background:var(--bg2);border-left:2px solid var(--amber)}
+.depop-note .dn-head{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:10px;display:block}
+.depop-note p{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l70);line-height:1.55}
+
+/* TIMELINE */
+#timeline{background:var(--bg);padding:96px 0}
+.tl-header{padding:0 60px;margin-bottom:52px}
+.tl-wrap{overflow-x:auto;overflow-y:hidden;padding:0 60px 48px;scrollbar-width:thin;scrollbar-color:var(--red) var(--bg2);cursor:grab;-webkit-overflow-scrolling:touch}
+.tl-wrap:active{cursor:grabbing}
+.tl-wrap::-webkit-scrollbar{height:3px}
+.tl-wrap::-webkit-scrollbar-track{background:var(--bg2)}
+.tl-wrap::-webkit-scrollbar-thumb{background:var(--red)}
+.tl-track{display:flex;width:max-content;position:relative;align-items:flex-start}
+.tl-track::before{content:'';position:absolute;top:30px;left:0;right:0;height:1px;background:var(--bdr2)}
+.tl-event{width:260px;flex-shrink:0;padding:60px 40px 0 0;position:relative}
+.tl-event::before{content:'';position:absolute;top:24px;left:0;width:12px;height:12px;border-radius:50%;border:2px solid var(--red);background:var(--bg)}
+.tl-event.key::before{background:var(--red)}
+.tl-dt{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.tl-title{font-family:var(--serif);font-size:17px;color:var(--linen);line-height:1.2;margin-bottom:10px}
+.tl-body{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l40);line-height:1.55}
+
+/* MARKET REACTION */
+#reaction{background:var(--bg1)}
+.react-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bdr);margin-bottom:2px}
+.rc{background:var(--bg1);padding:36px}
+.move{font-family:var(--mono);font-weight:600;font-size:58px;letter-spacing:-.04em;line-height:1;margin:12px 0 10px}
+.move-dn{color:var(--red)}
+.move-up{color:var(--green)}
+.move-gap{color:var(--linen)}
+.rc-body{font-family:var(--sans);font-size:13.5px;font-weight:300;color:var(--l40);line-height:1.55}
+.analyst-block{background:var(--bg2);padding:24px 32px;border-left:2px solid var(--bdr2)}
+.analyst-block p{font-family:var(--sans);font-size:15px;font-weight:300;font-style:italic;color:var(--l70);line-height:1.60}
+.analyst-block cite{display:block;font-style:normal;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--l40);margin-top:12px}
+
+/* RISKS */
+#risks{background:var(--bg)}
+.risks-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px}
+.risk{padding:26px 30px;border:1px solid var(--bdr);position:relative}
+.risk::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--red);opacity:.35}
+.risk-head{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--linen);margin-bottom:12px}
+.risk-body{font-family:var(--sans);font-size:13.5px;font-weight:300;color:var(--l40);line-height:1.60}
+
+/* SOURCES */
+#sources{background:var(--bg1);padding:80px 60px}
+.sources-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--bdr);margin-top:40px}
+.source-card{background:var(--bg1);padding:28px 32px;display:flex;flex-direction:column;gap:6px}
+.source-outlet{font-family:var(--serif);font-size:18px;color:var(--linen);line-height:1.1}
+.source-desc{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l40);line-height:1.50}
+.source-type{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--red);margin-top:4px}
+
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--bdr);padding:52px 60px}
+.ft-grid{display:grid;grid-template-columns:1fr 2fr;gap:60px;margin-bottom:32px}
+.ft-brand{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--linen);margin-bottom:10px}
+.ft-brand em{font-style:normal;color:var(--red)}
+.ft-line{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--l40);line-height:1.50}
+.ft-disc{font-family:var(--sans);font-size:11.5px;font-weight:300;color:var(--l40);line-height:1.65;border-top:1px solid var(--bdr);padding-top:24px}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+.ft-copy{font-family:var(--mono);font-size:9.5px;letter-spacing:.10em;color:var(--l40);text-transform:uppercase}
+.ft-dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.10em;color:var(--red);text-transform:uppercase}
+
+/* ANIMATIONS */
+.fu{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.fu.in{opacity:1;transform:translateY(0)}
+.fu.d1{transition-delay:.10s}
+.fu.d2{transition-delay:.20s}
+.fu.d3{transition-delay:.32s}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — tablet
+═══════════════════════════════════════ */
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .nav-links{gap:16px}
+  .nav-links a{font-size:8.5px}
+  section{padding:72px 28px}
+  .hero-foot{padding:48px 28px 64px}
+  .tl-header{padding:0 28px}
+  .tl-wrap{padding:0 28px 40px}
+  #sources{padding:72px 28px}
+  footer{padding:48px 28px}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .bc-full{grid-column:span 2}
+  .bc-wide{grid-column:span 2}
+  .thesis-grid{grid-template-columns:1fr 1fr}
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — mobile
+═══════════════════════════════════════ */
+@media(max-width:700px){
+  /* Nav */
+  nav{padding:0 20px;height:50px}
+  .nav-links{display:none}
+  .nav-date{font-size:8.5px;padding:4px 10px}
+
+  /* Ticker */
+  .ti{font-size:8.5px;padding:0 18px}
+
+  /* Hero: vertical stack */
+  .hero-split{display:flex;flex-direction:column;min-height:auto}
+  .hero-panel{padding:48px 24px 36px}
+  .hero-panel-l{order:1}
+  .hero-divider{order:2;height:44px;width:100%;flex-direction:row;justify-content:center;align-items:center}
+  .hero-panel-r{order:3}
+  .hero-co{font-size:clamp(34px,10vw,50px);margin-bottom:20px}
+  .hero-foot{padding:40px 24px 60px}
+  .hero-hl{font-size:clamp(38px,11vw,60px)}
+  .hero-lede{font-size:16px}
+  .scroll-cue{display:none}
+  .hs-val{font-size:17px}
+
+  /* Bento: 1 col */
+  .bento{grid-template-columns:1fr}
+  .bc-wide,.bc-full{grid-column:span 1}
+  .bc-num-xl{font-size:60px}
+  .bc-num{font-size:44px}
+  .prems{gap:6px}
+  .prem-pct{font-size:15px}
+  .fin-row{height:auto;min-height:44px;padding:10px 0;flex-wrap:wrap}
+  .fin-label{min-width:0;font-size:8.5px}
+  .fin-amount{font-size:11px}
+
+  /* Thesis */
+  .thesis-grid{grid-template-columns:1fr}
+  .tc-num{font-size:56px}
+
+  /* Context */
+  .cx-grid{grid-template-columns:1fr}
+  .gmv-val-lg{font-size:32px}
+
+  /* Timeline */
+  .tl-event{width:220px;padding:56px 24px 0 0}
+  #timeline{padding:64px 0}
+  .tl-header{padding:0 24px}
+  .tl-wrap{padding:0 24px 36px}
+
+  /* Market */
+  .react-grid{grid-template-columns:1fr}
+  .move{font-size:48px}
+
+  /* Risks */
+  .risks-grid{grid-template-columns:1fr;gap:14px}
+
+  /* Sources */
+  .sources-grid{grid-template-columns:1fr}
+  #sources{padding:64px 24px}
+
+  /* Footer */
+  .ft-grid{grid-template-columns:1fr;gap:28px}
+  .ft-bottom{flex-direction:column;gap:8px;align-items:flex-start}
+  footer{padding:40px 24px}
+
+  section{padding:64px 24px}
+  .sub{font-size:15px;margin-bottom:36px}
+
+  /* Quote */
+  .lq-price{font-size:30px}
+}
+
+@media(max-width:400px){
+  .hero-co{font-size:32px}
+  .hs-val{font-size:15px}
+  .bc-num-xl{font-size:50px}
+  .hero-hl{font-size:36px}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track" id="ttrack"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">GME <em>/</em> EBAY</div>
+  <ul class="nav-links">
+    <li><a href="#anatomy">Proposal</a></li>
+    <li><a href="#thesis">Thesis</a></li>
+    <li><a href="#context">eBay</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#reaction">Markets</a></li>
+    <li><a href="#risks">Risks</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+  <div class="nav-date">May 04, 2026</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <div class="hero-split">
+
+    <!-- LEFT: GME -->
+    <div class="hero-panel hero-panel-l">
+      <div class="hero-role">The Acquirer</div>
+      <div class="hero-ticker">NYSE: GME</div>
+      <div class="hero-co">Game<em>Stop</em><br>Corp.</div>
+      <div class="hero-stats">
+        <div class="hs"><span class="hs-val">$11.9B</span><span class="hs-label">Market Cap</span></div>
+        <div class="hs"><span class="hs-val">$9.4B</span><span class="hs-label">Balance Sheet Cash</span></div>
+        <div class="hs"><span class="hs-val">~1,600</span><span class="hs-label">U.S. Retail Locations</span></div>
+      </div>
+      <div class="live-quote">
+        <div class="lq-header"><div class="live-dot"></div><span class="live-label">Live Quote</span></div>
+        <div class="lq-price loading" id="gme-price">—</div>
+        <div class="lq-change" id="gme-change">Fetching...</div>
+        <div class="lq-sub" id="gme-sub"></div>
+        <span class="lq-ts" id="gme-ts"></span>
+      </div>
+    </div>
+
+    <!-- CENTER DIVIDER -->
+    <div class="hero-divider"></div>
+
+    <!-- RIGHT: EBAY -->
+    <div class="hero-panel hero-panel-r">
+      <div class="hero-role">The Target</div>
+      <div class="hero-ticker">NASDAQ: EBAY</div>
+      <div class="hero-co"><em>eBay</em><br>Inc.</div>
+      <div class="hero-stats">
+        <div class="hs"><span class="hs-val">$55.5B</span><span class="hs-label">Offer Equity Value</span></div>
+        <div class="hs"><span class="hs-val">$46.2B</span><span class="hs-label">Pre-Bid Market Cap</span></div>
+        <div class="hs"><span class="hs-val">$79.6B</span><span class="hs-label">2025 Gross Merchandise Volume</span></div>
+      </div>
+      <div class="live-quote">
+        <div class="lq-header"><div class="live-dot"></div><span class="live-label">Live Quote</span></div>
+        <div class="lq-price loading" id="ebay-price">—</div>
+        <div class="lq-change" id="ebay-change">Fetching...</div>
+        <div class="lq-sub" id="ebay-sub"></div>
+        <!-- Spread to $125 offer — computed live -->
+        <div class="lq-spread" id="ebay-spread-block" style="display:none">
+          <span class="lq-spread-label">Spread to $125.00 Offer</span>
+          <div class="lq-spread-val" id="ebay-spread-val">—</div>
+          <span class="lq-spread-sub" id="ebay-spread-sub"></span>
+        </div>
+        <span class="lq-ts" id="ebay-ts"></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HERO FOOT -->
+  <div class="hero-foot">
+    <div class="hero-hl fu">GameStop<br><em>Goes Hostile.</em></div>
+    <div class="hero-rule fu d1"></div>
+    <p class="hero-lede fu d2">Ryan Cohen's $55.5 billion unsolicited proposal to acquire eBay is among the boldest M&amp;A bids in recent memory — a company worth $11.9 billion pursuing a target nearly four times its size. If completed, Cohen envisions a combined marketplace capable of becoming a genuine rival to Amazon.</p>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll to explore</span>
+    <div class="scroll-ring">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+        <path d="M5 2L5 8M2 5.5L5 8L8 5.5" stroke="rgba(245,240,235,0.4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- 01 PROPOSAL ANATOMY -->
+<section id="anatomy">
+  <div class="eyebrow fu">01 — Proposal Anatomy</div>
+  <h2 class="h2 fu d1">The Offer,<br><em>Dissected.</em></h2>
+  <p class="sub fu d2">A non-binding, unsolicited proposal submitted to eBay's board on May 3, 2026. eBay confirmed receipt on May 4 and stated that no prior discussions or outreach from GameStop had occurred.</p>
+  <div class="bento fu d3">
+    <div class="bc bc-wide" style="background:#0d0005;border-top:2px solid var(--red)">
+      <span class="tag">Offer Price Per Share</span>
+      <div class="bc-num-xl">$125<span style="font-size:36px;color:var(--l40);font-weight:300">.00</span></div>
+      <p class="bc-body" style="max-width:520px">The proposed consideration per eBay share. GameStop submitted the offer via letter to eBay Chairman Paul Kessler on May 3, 2026. The price is denominated 50% in cash and 50% in GameStop common stock, with full shareholder election rights subject to pro-rata allocation.</p>
+      <div class="prems">
+        <div class="prem"><span class="prem-pct">+46%</span><span class="prem-lbl">vs. Feb 4, 2026 unaffected close</span></div>
+        <div class="prem"><span class="prem-pct">+27%</span><span class="prem-lbl">vs. 30-Day VWAP</span></div>
+        <div class="prem"><span class="prem-pct">+36%</span><span class="prem-lbl">vs. 90-Day VWAP</span></div>
+        <div class="prem"><span class="prem-pct">+20%</span><span class="prem-lbl">vs. May 2, 2026 close ($104.07)</span></div>
+      </div>
+    </div>
+    <div class="bc">
+      <span class="tag">Aggregate Equity Value</span>
+      <div class="bc-num">$55.5<span class="bc-unit">B</span></div>
+      <p class="bc-body">Based on eBay's most recently disclosed undiluted share count. GameStop's own market capitalization at announcement was approximately $11.9 billion — roughly one-fifth the offer size.</p>
+    </div>
+    <div class="bc bc-wide">
+      <span class="tag">Consideration Structure</span>
+      <div class="split-bar"><div class="split-cash"></div><div class="split-stock"></div></div>
+      <div class="split-lbls">
+        <span class="split-lbl" style="color:var(--red)">50% Cash</span>
+        <span class="split-lbl" style="color:var(--l40)">50% GameStop Common Stock</span>
+      </div>
+      <p class="bc-body" style="margin-top:14px">eBay shareholders may elect their preferred mix of cash and GME stock, subject to pro-rata allocation. The cash component implies approximately $27.75 billion; the stock component implies an equivalent value in newly issued GameStop shares.</p>
+    </div>
+    <div class="bc">
+      <span class="tag">Pledged Annual Cost Savings</span>
+      <div class="bc-num">$2.0<span class="bc-unit">B</span></div>
+      <p class="bc-body">Targeted within 12 months of transaction close. GameStop cited eBay's $2.4 billion in fiscal 2025 sales and marketing spend, which produced only one million net new active buyers.</p>
+    </div>
+    <div class="bc">
+      <span class="tag">Pre-Bid Economic Stake in eBay</span>
+      <div class="bc-num">5<span class="bc-unit">%</span></div>
+      <p class="bc-body">Accumulated through direct share purchases and derivatives beginning February 4, 2026 — the date eBay designates as the "unaffected" baseline price for premium calculations.</p>
+    </div>
+    <div class="bc bc-full">
+      <span class="tag" style="margin-bottom:22px">Financing Stack</span>
+      <div class="fin-rows">
+        <div class="fin-row">
+          <div class="fin-cash" style="flex:9.4;display:flex;align-items:center;height:100%">
+            <span class="fin-label">Balance Sheet Cash</span><span class="fin-amount">$9.4B</span>
+          </div>
+        </div>
+        <div class="fin-row">
+          <div class="fin-debt" style="flex:20;display:flex;align-items:center;height:100%">
+            <span class="fin-label">TD Securities — Debt Financing</span><span class="fin-amount" style="color:var(--l70)">$20.0B (Highly Confident Letter)</span>
+          </div>
+        </div>
+        <div class="fin-row">
+          <div class="fin-gap" style="flex:26;display:flex;align-items:center;height:100%">
+            <span class="fin-label">Equity Issuance / Additional Capital</span>
+            <span class="fin-amount" style="color:var(--l40);font-weight:300;font-size:10px;letter-spacing:.06em">Remaining gap — not yet committed</span>
+          </div>
+        </div>
+      </div>
+      <p class="bc-body" style="margin-top:16px">The aggregate consideration of approximately $55.5 billion requires capital beyond the confirmed $9.4 billion balance sheet cash and $20.0 billion TD Securities financing letter. Cohen confirmed on CNBC that GameStop has the ability to issue additional common stock to bridge the gap.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 STRATEGIC THESIS -->
+<section id="thesis">
+  <div class="eyebrow fu">02 — Strategic Thesis</div>
+  <h2 class="h2 fu d1">Cohen's<br><em>Ambition.</em></h2>
+  <blockquote class="quote-block fu d2">
+    <p class="quote-text">"eBay could be a legit competitor to Amazon."</p>
+    <cite class="quote-attr">Ryan Cohen, CEO — GameStop Corp. · The Wall Street Journal, May 3, 2026</cite>
+  </blockquote>
+  <div class="thesis-grid fu d3">
+    <div class="tc">
+      <div class="tc-num">01</div>
+      <h3 class="tc-head">Physical Meets Digital</h3>
+      <p class="tc-body">In his letter to eBay Chairman Paul Kessler, Cohen described <strong>GameStop's approximately 1,600 U.S. retail locations</strong> as a national infrastructure layer for authentication, inventory intake, fulfillment, and live commerce. Paired with eBay's global online marketplace, the combination could give the entity both digital reach and physical presence — an asset mix Amazon has spent years attempting to replicate.</p>
+    </div>
+    <div class="tc">
+      <div class="tc-num">02</div>
+      <h3 class="tc-head">Category Alignment</h3>
+      <p class="tc-body">The two businesses share significant overlap in <strong>video games, collectibles, and trading cards</strong> — categories eBay CEO Jamie Iannone has already elevated as strategic "focus categories." Cohen also identified <strong>live commerce</strong> as an underdeveloped opportunity for eBay's platform, a channel where GameStop's physical footprint and brand recognition among collectors could drive meaningful differentiation.</p>
+    </div>
+    <div class="tc">
+      <div class="tc-num">03</div>
+      <h3 class="tc-head">Operational Track Record</h3>
+      <p class="tc-body">Since assuming control of GameStop in early 2021, Cohen oversaw a swing from a <strong>$381 million net loss in FY2021</strong> to <strong>$418 million in net income in FY2025</strong>, while reducing SG&amp;A costs by approximately <strong>$800 million</strong>. Cohen would serve as CEO of the combined company, compensated solely on the performance of the merged entity — no salary, no cash bonus, no golden parachute.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 EBAY AT THE CROSSROADS -->
+<section id="context">
+  <div class="eyebrow fu">03 — eBay at the Crossroads</div>
+  <h2 class="h2 fu d1">The Target's<br><em>Trajectory.</em></h2>
+  <p class="sub fu d2">eBay's gross merchandise volume peaked in 2020 during the pandemic-era e-commerce surge. The platform has since faced mounting competition and has not recovered its 2020 peak volume.</p>
+  <div class="cx-grid fu d3">
+    <div class="cx-card">
+      <span class="label-sm" style="display:block;margin-bottom:24px">Gross Merchandise Volume — 2020 Peak vs. 2025</span>
+      <div class="gmv-compare">
+        <div class="gmv-col">
+          <span class="gmv-yr">2020 Peak</span>
+          <div class="gmv-val-lg gmv-peak">$100B</div>
+          <span class="gmv-arrow">Pandemic-era high</span>
+        </div>
+        <div class="gmv-col">
+          <span class="gmv-yr">2025</span>
+          <div class="gmv-val-lg gmv-curr">$79.6B</div>
+          <span class="gmv-arrow">↓ −20.4% from peak</span>
+        </div>
+      </div>
+      <p class="gmv-desc">After reaching $100 billion in GMV in 2020, eBay's volume declined as pandemic-era shopping habits normalized and competition from newer marketplace entrants intensified. CEO Jamie Iannone's "focus categories" strategy — targeting trading cards, collectibles, used luxury goods, and auto parts — is designed to drive higher buyer engagement and transaction frequency.</p>
+    </div>
+    <div class="cx-card">
+      <span class="label-sm" style="display:block;margin-bottom:20px">Competitive Landscape — Key Pressure Points</span>
+      <div>
+        <div class="comp-row"><span class="comp-name">Amazon</span><span class="comp-type">Inventory + Third-Party Marketplace</span></div>
+        <div class="comp-row"><span class="comp-name">Walmart Marketplace</span><span class="comp-type">Omnichannel Retail</span></div>
+        <div class="comp-row"><span class="comp-name">TikTok Shop</span><span class="comp-type">Social Commerce</span></div>
+        <div class="comp-row"><span class="comp-name">Temu / Shein</span><span class="comp-type">Low-Cost Direct Commerce</span></div>
+        <div class="comp-row"><span class="comp-name">Etsy / Depop</span><span class="comp-type">C2C and Secondhand Apparel</span></div>
+      </div>
+      <div class="depop-note">
+        <span class="dn-head">Pending Transaction — eBay / Depop</span>
+        <p>In February 2026, eBay agreed to acquire Depop from Etsy for approximately $1.2 billion in cash. The deal has received regulatory clearance in the U.S. and Germany. Reviews remain in progress in the UK and Australia. Expected to close by Q3 2026, subject to remaining approvals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 TIMELINE -->
+<section id="timeline">
+  <div class="tl-header">
+    <div class="eyebrow fu">04 — Sequence of Events</div>
+    <h2 class="h2 fu d1">From Accumulation<br><em>to Hostile Bid.</em></h2>
+    <p class="sub fu d2" style="margin-bottom:0">Drag or scroll to trace the deal's path from Cohen's compensation announcement through eBay's first public response.</p>
+  </div>
+  <div class="tl-wrap" id="tlwrap">
+    <div class="tl-track">
+      <div class="tl-event key">
+        <div class="tl-dt">January 2026</div>
+        <div class="tl-title">Cohen Compensation Structure Announced</div>
+        <p class="tl-body">GameStop's board grants Cohen 171.5 million performance-based stock options at a $20.66 exercise price — no salary, no cash bonus, no time-based vesting. The options could be worth more than $35 billion only if all nine tranches fully vest, which requires hitting both a $100 billion market cap and $10 billion in cumulative EBITDA. If the minimum hurdles are not met, Cohen receives nothing. Source: GameStop 8-K, SEC EDGAR, January 7, 2026.</p>
+      </div>
+      <div class="tl-event key">
+        <div class="tl-dt">February 4, 2026</div>
+        <div class="tl-title">GME Begins Accumulating EBAY</div>
+        <p class="tl-body">GameStop quietly begins building an economic position in eBay through direct share purchases and derivatives. eBay's closing price on this date becomes the "unaffected" baseline — the price GameStop uses to establish the 46% premium at announcement.</p>
+      </div>
+      <div class="tl-event">
+        <div class="tl-dt">February 2026</div>
+        <div class="tl-title">eBay Announces Depop Acquisition</div>
+        <p class="tl-body">Separately, eBay agrees to acquire Depop from Etsy for approximately $1.2 billion in cash, targeting younger C2C fashion consumers. U.S. and German regulatory clearances obtained; UK and Australian reviews remain pending.</p>
+      </div>
+      <div class="tl-event key">
+        <div class="tl-dt">May 3, 2026 — Sunday</div>
+        <div class="tl-title">Hostile Proposal Submitted to eBay Board</div>
+        <p class="tl-body">Cohen submits a non-binding letter to eBay Chairman Paul Kessler offering $125.00 per share in a 50/50 cash-and-stock transaction. GameStop simultaneously discloses its 5% economic stake and provides the TD Securities "highly confident" financing letter. Cohen tells The Wall Street Journal he is prepared to pursue a proxy fight.</p>
+      </div>
+      <div class="tl-event key">
+        <div class="tl-dt">May 4, 2026 — Monday</div>
+        <div class="tl-title">eBay Confirms. Markets React.</div>
+        <p class="tl-body">eBay confirms receipt of the proposal, noting no prior discussions had taken place and its board would conduct a review. Cohen appears on CNBC Squawk Box in a notably combative interview. GME falls approximately 10%. EBAY rises approximately 5% to around $109 — a meaningful discount to the $125 offer.</p>
+      </div>
+      <div class="tl-event">
+        <div class="tl-dt">Pending</div>
+        <div class="tl-title">Board Response Outstanding</div>
+        <p class="tl-body">The eBay board has confirmed receipt and initiated review. The proposal remains non-binding and unsolicited. If the board declines to engage, Cohen has stated his intent to pursue a proxy fight — taking the offer directly to eBay shareholders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 MARKET REACTION -->
+<section id="reaction">
+  <div class="eyebrow fu">05 — Market Reaction</div>
+  <h2 class="h2 fu d1">Wall Street<br><em>Weighs In.</em></h2>
+  <p class="sub fu d2" style="margin-bottom:40px">Price movements on May 4, 2026 — the first full trading session following Sunday's announcement.</p>
+  <div class="react-grid fu d3">
+    <div class="rc">
+      <span class="tag">GME — May 4, 2026</span>
+      <div class="move move-dn">−10%</div>
+      <p class="rc-body">Investors priced in dilution risk. The financing gap between confirmed sources ($9.4B cash + $20B debt = $29.4B) and the $55.5B deal size implies material equity issuance. Cohen confirmed on CNBC that GameStop would issue additional stock to fund the gap.</p>
+    </div>
+    <div class="rc">
+      <span class="tag">EBAY — May 4, 2026</span>
+      <div class="move move-up">+5%</div>
+      <p class="rc-body">eBay shares climbed to approximately $109 on deal premium speculation — meaningful upside relative to pre-bid levels, but still trading at a substantial discount to the $125 offer. The gap implies a relatively low market-assigned probability of deal completion.</p>
+    </div>
+    <div class="rc">
+      <span class="tag">EBAY — Spread to Offer Price</span>
+      <div class="move move-gap">~$16</div>
+      <p class="rc-body">The spread between eBay's trading price (~$109) and the $125 offer is a market-implied signal. At approximately 13% below the offer price, the market is communicating material skepticism about both financing and board receptivity.</p>
+    </div>
+  </div>
+  <div class="analyst-block fu" style="margin-top:2px">
+    <p>"While there is overlap between GameStop's and eBay's businesses in games, toys and collectibles, the strategic rationale for such a deal remains unclear. Why disrupt things? The turnaround is working."</p>
+    <cite>Bernstein Research — Published Note to Clients, May 4, 2026</cite>
+  </div>
+</section>
+
+<!-- 06 RISK FACTORS -->
+<section id="risks">
+  <div class="eyebrow fu">06 — Risk Factors</div>
+  <h2 class="h2 fu d1">Material<br><em>Considerations.</em></h2>
+  <p class="sub fu d2">Key factors that bear on deal feasibility and execution. This analysis is for educational purposes and does not constitute investment advice.</p>
+  <div class="risks-grid fu d3">
+    <div class="risk">
+      <div class="risk-head">Financing Gap</div>
+      <p class="risk-body">Confirmed funding — $9.4 billion in balance-sheet cash plus the TD Securities $20 billion debt financing letter — totals approximately $29.4 billion. Completing the transaction at the proposed price requires additional equity issuance or third-party capital commitments that remain unconfirmed as of the announcement date.</p>
+    </div>
+    <div class="risk">
+      <div class="risk-head">Board Rejection and Proxy Path</div>
+      <p class="risk-body">eBay's board acknowledged receipt but confirmed that no prior discussions had taken place. If the board declines to engage substantively, Cohen has stated his willingness to pursue a proxy fight — a contested, expensive, and inherently uncertain process requiring GameStop to win sufficient eBay shareholder support against an incumbent board.</p>
+    </div>
+    <div class="risk">
+      <div class="risk-head">GME Shareholder Dilution</div>
+      <p class="risk-body">The 50% stock component of the consideration, combined with the likely need for additional equity issuance to fund the cash portion, implies significant dilution to existing GameStop shareholders. This dynamic drove GameStop's approximately 10% share price decline on the day of announcement.</p>
+    </div>
+    <div class="risk">
+      <div class="risk-head">Integration Complexity</div>
+      <p class="risk-body">Combining a domestic physical specialty retailer with a global online marketplace serving buyers and sellers in over 190 markets involves substantial operational, cultural, and systems integration risk. The pledged $2 billion in annual cost savings would need to be achieved concurrently with this integration within 12 months of close.</p>
+    </div>
+    <div class="risk">
+      <div class="risk-head">Regulatory Review</div>
+      <p class="risk-body">A transaction of this scale would require clearance from U.S. antitrust authorities and international regulators. eBay's separately announced acquisition of Depop from Etsy, with reviews still pending in the UK and Australia, further complicates the regulatory picture for a combined transaction.</p>
+    </div>
+    <div class="risk">
+      <div class="risk-head">No Prior Due Diligence</div>
+      <p class="risk-body">GameStop submitted this proposal without any prior engagement with eBay's management or access to non-public information. The $2 billion savings pledge and the overall strategic thesis are based entirely on publicly available data. Material unknown liabilities or undisclosed conditions could materially alter the transaction economics.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 07 SOURCES -->
+<section id="sources">
+  <div class="eyebrow fu">07 — Primary Sources</div>
+  <h2 class="h2 fu d1">Verified<br><em>Disclosures.</em></h2>
+  <p class="sub fu d2">All financial figures and deal terms cited on this site are sourced from verified public documents and named wire services. No figures are estimated or inferred without disclosure.</p>
+  <div class="sources-grid fu d3">
+    <div class="source-card">
+      <div class="source-outlet">GameStop Investor Relations</div>
+      <p class="source-desc">Official press release disclosing the non-binding acquisition proposal, offer price, consideration structure, VWAP premiums, and TD Securities financing letter. Primary document of record for all deal terms.</p>
+      <span class="source-type">Primary Disclosure · investor.gamestop.com</span>
+    </div>
+    <div class="source-card">
+      <div class="source-outlet">SEC EDGAR — eBay 8-K FY2026</div>
+      <p class="source-desc">eBay's regulatory filing confirming receipt of GameStop's proposal and disclosing the pending Depop acquisition from Etsy, including Q1 2026 financial data and guidance.</p>
+      <span class="source-type">Regulatory Filing · sec.gov/EDGAR</span>
+    </div>
+    <div class="source-card">
+      <div class="source-outlet">Bloomberg Markets</div>
+      <p class="source-desc">Deal structure reporting including the $56 billion headline valuation, TD Securities financing commitment, and market cap data for both GME and EBAY at the time of announcement.</p>
+      <span class="source-type">Wire Service · bloomberg.com</span>
+    </div>
+    <div class="source-card">
+      <div class="source-outlet">CNBC Squawk Box — May 4, 2026</div>
+      <p class="source-desc">Live interview with Ryan Cohen on May 4, 2026. Source for Cohen's statements on stock issuance and the characterization of the interview as combative. Cohen stated: "We have the ability to issue stock in order to get the deal done."</p>
+      <span class="source-type">Broadcast / Transcript · cnbc.com</span>
+    </div>
+    <div class="source-card">
+      <div class="source-outlet">The Wall Street Journal</div>
+      <p class="source-desc">First to report the unsolicited deal. Source for Cohen's letter to Paul Kessler, the "legit competitor to Amazon" framing, the proxy fight declaration, and the 1,600-store fulfillment network thesis.</p>
+      <span class="source-type">Wire Service · wsj.com</span>
+    </div>
+    <div class="source-card">
+      <div class="source-outlet">Bernstein Research</div>
+      <p class="source-desc">Published analyst note to clients questioning the strategic rationale: "Why disrupt things? The turnaround is working." Source for the skeptical institutional view on deal merit.</p>
+      <span class="source-type">Equity Research Note · May 4, 2026</span>
+    </div>
+    <div class="source-card">
+      <div class="source-outlet">CNN Business</div>
+      <p class="source-desc">Reporting on the $55.5 billion bid framing, Ryan Cohen's stated goal of building a competitor to Amazon, and eBay's pre-bid market capitalization of $46.2 billion.</p>
+      <span class="source-type">Wire Service · cnn.com</span>
+    </div>
+    <div class="source-card">
+      <div class="source-outlet">Al Jazeera Economy / Fox Business / Inc. Magazine</div>
+      <p class="source-desc">Corroborating sources for Ryan Cohen's ownership stake, the compensation package structure, eBay's GMV decline from $100B (2020) to $79.6B (2025), and the physical-plus-digital strategic rationale.</p>
+      <span class="source-type">Wire Services</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand">GME <em>/</em> EBAY<br>Deal Monitor</div>
+      <p class="ft-line">An independent educational analysis of GameStop's unsolicited proposal to acquire eBay Inc. Live price data via Finnhub. All deal terms sourced from verified public disclosures. Published May 4, 2026.</p>
+    </div>
+    <div>
+      <p class="ft-line">Live quotes powered by <strong style="color:var(--linen);font-weight:500">Finnhub.io</strong>. Prices refresh every 60 seconds during market hours. Market data is provided for informational purposes only. This website is not affiliated with GameStop Corp. or eBay Inc.</p>
+    </div>
+  </div>
+  <p class="ft-disc">This website is an independent educational resource. All financial figures are sourced from verified public disclosures including GameStop's investor relations press release, SEC EDGAR filings, and named wire services including Bloomberg, CNBC, and The Wall Street Journal. This is not investment advice. The proposal described herein is non-binding and subject to eBay board approval, regulatory review, and shareholder consent from both companies. All deal data reflects information available as of May 4, 2026.</p>
+  <div class="ft-bottom">
+    <span class="ft-copy">Educational Analysis — Not Investment Advice</span>
+    <span class="ft-dt">Published May 04, 2026</span>
+  </div>
+</footer>
+
+<script>
+/* ── FINNHUB LIVE QUOTES ─────────────────────────────── */
+const FH  = 'd7mjle9r01qngrvof0vgd7mjle9r01qngrvof100';
+const OFR = 125.00;
+
+async function fq(sym){
+  const r = await fetch(
+    `https://finnhub.io/api/v1/quote?symbol=${sym}&token=${FH}`,
+    { mode:'cors', credentials:'omit' }
+  );
+  if(!r.ok) throw new Error(`HTTP ${r.status}`);
+  return r.json();
+}
+
+function fmtT(ts){
+  if(!ts) return '';
+  return new Date(ts*1000).toLocaleTimeString('en-US',
+    {hour:'2-digit',minute:'2-digit',timeZone:'America/New_York'}) + ' ET';
+}
+
+function setGME(d){
+  const p=document.getElementById('gme-price'),
+        c=document.getElementById('gme-change'),
+        s=document.getElementById('gme-sub'),
+        t=document.getElementById('gme-ts');
+  if(!d||!d.c||d.c===0){
+    p.textContent='—';c.textContent='Market may be closed';return;
+  }
+  p.textContent=`$${d.c.toFixed(2)}`;p.classList.remove('loading');
+  const up=d.d>=0,sg=up?'+':'';
+  c.textContent=`${sg}$${d.d.toFixed(2)}  (${sg}${d.dp.toFixed(2)}%)  today`;
+  c.className=`lq-change ${up?'lq-up':'lq-dn'}`;
+  s.textContent=`Prev close  $${d.pc.toFixed(2)}`;
+  t.textContent=d.t?`Updated ${fmtT(d.t)}`:'';
+}
+
+function setEBAY(d){
+  const p=document.getElementById('ebay-price'),
+        c=document.getElementById('ebay-change'),
+        s=document.getElementById('ebay-sub'),
+        t=document.getElementById('ebay-ts'),
+        sb=document.getElementById('ebay-spread-block'),
+        sv=document.getElementById('ebay-spread-val'),
+        ss=document.getElementById('ebay-spread-sub');
+  if(!d||!d.c||d.c===0){
+    p.textContent='—';c.textContent='Market may be closed';return;
+  }
+  p.textContent=`$${d.c.toFixed(2)}`;p.classList.remove('loading');
+  const up=d.d>=0,sg=up?'+':'';
+  c.textContent=`${sg}$${d.d.toFixed(2)}  (${sg}${d.dp.toFixed(2)}%)  today`;
+  c.className=`lq-change ${up?'lq-up':'lq-dn'}`;
+  s.textContent=`Prev close  $${d.pc.toFixed(2)}`;
+  t.textContent=d.t?`Updated ${fmtT(d.t)}`:'';
+  const spread=OFR-d.c,spct=((spread/d.c)*100).toFixed(1);
+  sv.textContent=`$${spread.toFixed(2)}`;
+  ss.textContent=`${spct}% below the $125.00 offer price`;
+  sb.style.display='block';
+}
+
+async function load(){
+  try{
+    const [g,e]=await Promise.all([fq('GME'),fq('EBAY')]);
+    setGME(g);setEBAY(e);
+  }catch(err){
+    console.warn('Finnhub:',err);
+    const isNetwork = err.message==='Failed to fetch';
+    const msg = isNetwork
+      ? 'Live quotes available on hosted site'
+      : 'Unable to load quote';
+    ['gme-price','ebay-price'].forEach(id=>{
+      const el=document.getElementById(id);
+      if(el){el.textContent='—';el.classList.remove('loading');}
+    });
+    ['gme-change','ebay-change'].forEach(id=>{
+      const el=document.getElementById(id);
+      if(el) el.textContent=msg;
+    });
+  }
+}
+load();
+setInterval(load,60000);
+
+/* ── TICKER ──────────────────────────────────────────── */
+(function(){
+  const items=[
+    'GME · NYSE','$125.00 / SHR','50% Cash · 50% GME Stock',
+    '$55.5B Equity Value','+46% Premium to Feb 4','+20% Premium to May 2',
+    'TD Securities $20B Committed','$9.4B GME Balance Sheet Cash',
+    '$2B Annual Savings Pledge','Non-Binding · Board Review Pending',
+    'Ryan Cohen — Proposed CEO','Filed May 3, 2026',
+    'eBay GMV $79.6B in 2025','~1,600 GameStop U.S. Stores',
+    'GME −10% · EBAY +5% on May 4','5% Economic Stake Disclosed',
+    'Cohen: "Legit Competitor to Amazon"','Proxy Fight Risk',
+    'eBay Confirms · No Prior Discussions'
+  ];
+  const t=document.getElementById('ttrack');
+  const all=[...items,...items];
+  all.forEach((item,i)=>{
+    const s=document.createElement('span');
+    s.className='ti';s.textContent=item;t.appendChild(s);
+    if(i<all.length-1){
+      const d=document.createElement('span');
+      d.className='td';d.textContent='·';t.appendChild(d);
+    }
+  });
+})();
+
+/* ── FADE-UP ─────────────────────────────────────────── */
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});
+},{threshold:.10,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+/* ── DRAG SCROLL TIMELINE ────────────────────────────── */
+const tlw=document.getElementById('tlwrap');
+let dn=false,sx=0,sl=0;
+tlw.addEventListener('mousedown',e=>{dn=true;sx=e.pageX-tlw.offsetLeft;sl=tlw.scrollLeft;tlw.style.userSelect='none';});
+document.addEventListener('mouseup',()=>{dn=false;tlw.style.userSelect='';});
+document.addEventListener('mousemove',e=>{if(!dn)return;tlw.scrollLeft=sl-(e.pageX-tlw.offsetLeft-sx)*1.2;});
+</script>
+</body>
+</html>
